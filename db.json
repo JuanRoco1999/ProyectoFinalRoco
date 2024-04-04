@@ -1,0 +1,100 @@
+[
+        {
+        "id":1,
+        "img":"./statics/pressbanca.gif",
+        "nombre":"Press de banca",
+        "descripcion":"Ejercicio más popular para el desarrollo de la fuerza y el tamaño de la parte superior del cuerpo, centrándose especialmente en el pecho, los hombros y los tríceps. Se realiza acostado en un banco plano con una barra, bajando y levantando la barra desde el pecho mediante la extensión de los brazos.",
+        "zona":"Pecho"
+        },
+        {
+        "id":2,
+        "img":"./statics/remobarra.gif",
+        "nombre":"Remo barra T",
+        "descripcion":"Ejercicio compuesto que se utiliza para fortalecer los músculos de la espalda, especialmente los dorsales, así como los músculos de los brazos y los hombros. Se realiza con una barra y se centra en el movimiento de tracción hacia el cuerpo.",
+        "zona":"Espalda"
+        },
+        {
+        "id":3,
+        "img":"./statics/tricepsExtendidos.gif",
+        "nombre":"Triceps Extendidos",
+        "descripcion":"Ejercicio de aislamiento que se centra en el fortalecimiento y desarrollo de los músculos del tríceps, ubicados en la parte posterior de los brazos. Este ejercicio se realiza típicamente con una pesa o mancuerna y es efectivo para tonificar y definir los tríceps.",
+        "zona":"Triceps"
+        },
+        {
+        "id":4,
+        "img":"./statics/gemelo.gif",
+        "nombre":"Gemelos",
+        "descripcion":"Ejercicio diseñado para fortalecer los músculos de la pantorrilla, especialmente los gemelos, en una posición sentada. Es una variante efectiva para trabajar los músculos de la pantorrilla de manera aislada y puede realizarse con diferentes niveles de resistencia.",
+        "zona":"Piernas"
+        },
+        {
+        "id":5,
+        "img":"./statics/bicepsconcentrado.gif",
+        "nombre":"Biceps concentrados",
+        "descripcion":"Ejercicio de aislamiento diseñado para fortalecer y desarrollar los músculos del bíceps braquial, ubicados en la parte frontal del brazo. Este ejercicio se realiza típicamente con una mancuerna y se centra en el movimiento controlado y preciso del bíceps.",
+        "zona":"Brazos"
+        },
+        {
+        "id":6,
+        "img":"./statics/espalda.gif",
+        "nombre":"Espalda con barra",
+        "descripcion":"Ejercicio de entrenamiento de fuerza diseñado para desarrollar los músculos de la espalda, especialmente los dorsales. Se realiza utilizando una máquina de polea con una barra en la parte superior, y se centra en el movimiento de tracción hacia abajo para trabajar los músculos de la espalda.",
+        "zona":"Espalda"
+        },
+        {
+        "id":7,
+        "img":"./statics/fondos.gif",
+        "nombre":"Fondo",
+        "descripcion":"Ejercicio de calistenia que se enfoca en el desarrollo de la fuerza y la musculatura de la parte superior del cuerpo, especialmente los tríceps, los pectorales y los hombros. Este ejercicio se realiza utilizando barras paralelas, y puede adaptarse para diferentes niveles de habilidad y fuerza.",
+        "zona":"Brazos"
+        },
+        {
+        "id":8,
+        "img":"./statics/martilloo.gif",
+        "nombre":"Martillo",
+        "descripcion":"Ejercicio de entrenamiento de fuerza diseñado para desarrollar los músculos del brazo, especialmente el braquial y el braquiorradial. A diferencia del curl de bíceps tradicional, el curl martillo implica un agarre neutro, lo que coloca más énfasis en los músculos del antebrazo y puede ayudar a mejorar el agarre.",
+        "zona":"Brazos"
+        },
+        {
+        "id":9,
+        "img":"./statics/martillosentado.gif",
+        "nombre":"Martillo sentado",
+        "descripcion":"El curl martillo sentado es una variación del curl martillo que se realiza mientras estás sentado, lo que proporciona estabilidad adicional y reduce la posibilidad de balanceo durante el ejercicio. Se centra en el desarrollo de los músculos del antebrazo, específicamente el braquial y el braquiorradial, así como en los bíceps.",
+        "zona":"Brazos"
+        },
+        {
+        "id":10,
+        "img":"./statics/pesoMuerto.gif",
+        "nombre":"Peso Muerto",
+        "descripcion":"Ejercicio fundamental de levantamiento de peso que se centra en el desarrollo de la fuerza en los músculos de la espalda, las piernas y los glúteos. Se realiza levantando una barra desde el suelo hasta la posición erguida, enfatizando la técnica adecuada y la activación muscular.",
+        "zona":"Piernas"
+        },
+        {
+        "id":11,
+        "img":"./statics/prensaa.gif",
+        "nombre":"Prensa",
+        "descripcion":"Ejercicio de entrenamiento de fuerza que se enfoca en el desarrollo de los músculos del pecho, los hombros y los tríceps. Se realiza acostado en un banco plano y utilizando una barra o mancuernas para empujar el peso hacia arriba desde el pecho hasta la extensión completa de los brazos.",
+        "zona":"Piernas"
+        },
+        {
+        "id":12,
+        "img":"./statics/remo.gif",
+        "nombre":"Remo",
+        "descripcion":"Ejercicio compuesto que se centra en el desarrollo de la fuerza y la musculatura de la espalda, específicamente los músculos del trapecio, los dorsales y los romboides. Utiliza una barra y se caracteriza por el movimiento de tracción hacia el cuerpo.",
+        "zona":"Espalda"
+        },
+        {
+        "id":13,
+        "img":"./statics/remoBajo.gif",
+        "nombre":"Remo bajo",
+        "descripcion":"Ejercicio de entrenamiento de fuerza que se enfoca en el desarrollo de los músculos de la espalda, especialmente los dorsales y los romboides. Este ejercicio se realiza utilizando una barra y se caracteriza por el movimiento de tracción hacia el cuerpo desde una posición baja.",
+        "zona":"Espalda"
+        },
+        {
+        "id":14,
+        "img":"./statics/triceps.gif",
+        "nombre":"Triceps",
+        "descripcion":"Ejercicio efectivo para el desarrollo de los músculos del tríceps, ubicados en la parte posterior del brazo. Este ejercicio se realiza típicamente acostado en un banco con una mancuerna en cada mano, y se centra en la extensión y flexión de los codos para trabajar los tríceps.",
+        "zona":"Brazos"
+        }
+]
