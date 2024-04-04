@@ -1,4 +1,4 @@
-/* Logica de inicio de sesión*/
+// Selección de elementos del DOM
 const usuario = document.querySelector('#usuario'),
 contraseña = document.querySelector('#contraseña'),
 iniciar = document.querySelector('#iniciar'),
@@ -7,11 +7,13 @@ const iniciandoSesion = document.getElementById("cargando")
 const contenido = document.querySelector(".container");
 const registrar = document.querySelector("#registrar");
 
-
+// Declaración de variables
 let usuarios = [];
 let usuarioEncontrado;
 let contraseñaEncontrada;
 
+
+// Clase Recordar para almacenar usuario y contraseña
 class Recordar{
     constructor(usuario,contraseña){
         this.usuario = usuario,
@@ -19,6 +21,7 @@ class Recordar{
     }
 }
 
+// Función para mostrar el estado de carga
 function cargando(){
     iniciandoSesion.classList.remove("none");
     iniciandoSesion.classList.add("block");
@@ -30,16 +33,18 @@ function cargando(){
     },2000)
 }
 
-
+// Función para guardar usuario en la sesión
 function guardarUsuario(recordarUsu){
     usuarios.push(recordarUsu);
     guardarEnSession(usuarios);
 }
 
+// Función para guardar usuarios en la sesión
 function guardarEnSession(usuarios){
     return sessionStorage.setItem('usuarios', JSON.stringify(usuarios));
 }
 
+// Evento click del botón de iniciar sesión
 iniciar.addEventListener('click',(e)=>{
     usuarios = JSON.parse(localStorage.getItem('usuarios'));
     if(usuarios == null){ // Condicional para comprobar que exista algo en el localStorage
@@ -66,18 +71,19 @@ iniciar.addEventListener('click',(e)=>{
     }
 })
 
+// Evento click del botón de registro
 registrar.addEventListener("click", ()=>{
     window.location.href = "./registro.html";
 });
 
-
+// Función para buscar usuario en el localStorage
 function buscarUsuario(usuarioFilter){
     usuarios = JSON.parse(localStorage.getItem('usuarios'));
     usuarioEncontrado = usuarios.filter(e => e.usuario === usuarioFilter);
     return usuarioEncontrado.length > 0 ? usuarioEncontrado[0] : null
 }
 
-
+// Función para buscar contraseña en el localStorage
 function buscarContraseña(contraseñaFilter){
     usuarios = JSON.parse(localStorage.getItem('usuarios'));
     contraseñaEncontrada = usuarios.filter(e => e.contraseña === contraseñaFilter);
@@ -85,7 +91,7 @@ function buscarContraseña(contraseñaFilter){
 }
 
 
-/* Framework SweetAlert */
+// Función para mostrar una alerta personalizada
 function sweetAlert(mensaje,icono){
     Swal.fire({
         position: "top-end",

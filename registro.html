@@ -12,15 +12,24 @@
     <div id="cont-reg" class="container">
         <div id="form-reg" class="form-back">
             <h1>REGISTRO</h1>
+
+            <!-- Formulario  -->
             <form>
+
+                <!-- Campos de entrada: nombre, usuario, email, contraseña -->
                 <input type="text" id="nombre" name="nombre" placeholder="Nombre" class="input-text" required>
                 <input type="text" id="usuario" name="usuario" placeholder="Usuario" class="input-text" required>
-                <input type="text" id="email" name="email" placeholder="Email" class="input-text" required>
+                <input type="email" id="email" name="email" placeholder="Email" class="input-text" required>
                 <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña" class="input-text" required>
+
+                <!-- Botón para enviar el formulario -->
                 <input id="registrar" type="submit" value="Registrar">
+
+                <!-- Vínculo para ir a la página de inicio de sesión -->
                 <a class="vinculo" href="./inicio.html">¿Ya tienes una cuenta?</a>
                 
             </form>
+            
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.6/dist/sweetalert2.all.min.js"></script>

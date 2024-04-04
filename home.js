@@ -1,14 +1,22 @@
+// Selección de elementos del DOM
 const btnBuscar = document.querySelector('#btn-busqueda'),
 busqueda = document.querySelector('#busqueda'),
 contMaquinas = document.querySelector('#cont-maquinas');
 const contenido = document.querySelector("#contenido");
 const iniciandoSesion = document.querySelector("#cargando")
+const logo = document.querySelector('.logo');
 
+// Inicialización de variables
 let btnAgregar;
 let encontrado;
 let usActual = JSON.parse(localStorage.getItem('usuarioActual'));
 
+// Evento clic en el logo para redirigir a la página de inicio
+logo.addEventListener("click", ()=>{
+    window.location.href = "./home.html"; // Redirigir al usuario a la página de inicio
+});
 
+// Función para mostrar notificaciones
 function toastify(texto, dir) {
     Toastify({
         text: texto,
@@ -29,14 +37,15 @@ function toastify(texto, dir) {
     }).showToast();
 }
 
+// Mostrar mensaje de bienvenida
 let texto = "Bienvenido " + usActual;
 toastify(texto);
     
-    
+// Array para almacenar máquinas    
 let maquinasDB = [];
 const API_URL = "./db.json"
 
-
+// Obtener datos de la API
 const getData = async(url) =>{
     const response = await fetch(url);
     const data = await response.json();
@@ -46,7 +55,7 @@ const getData = async(url) =>{
 
 getData(API_URL);
 
-
+// Función para mostrar las máquinas
 function getMaquinas(maquinasDB){
     
     maquinasDB.forEach(maquina => {
@@ -64,6 +73,7 @@ function getMaquinas(maquinasDB){
                                     </div>`;
     });
     
+    // Evento de clic para agregar máquinas
     const btnAgregar = document.querySelectorAll(".agg");
     
     btnAgregar.forEach(btn => {
@@ -78,10 +88,10 @@ function getMaquinas(maquinasDB){
     });
 }
 
+// Llamar a la función para mostrar las máquinas
 getMaquinas(maquinasDB);
 
-
-
+// Función para buscar máquinas
 function buscarMaquina(arr, filtro){
     const filtroLowerCase = filtro.toLowerCase();
     const encontrados = arr.filter((e)=>{
@@ -90,6 +100,7 @@ function buscarMaquina(arr, filtro){
     return encontrados;
 }
 
+// Evento de clic para buscar máquinas
 btnBuscar.addEventListener('click',()=>{
     const encontrados = buscarMaquina(maquinasDB, busqueda.value);
     if(encontrados.length > 0){
@@ -123,8 +134,7 @@ btnBuscar.addEventListener('click',()=>{
     }
 })
 
-
-
+// Clase para representar una máquina
 class Maquina{
     constructor(id, imagen, nombre, descripcion, zona){
         this.id = id;
@@ -135,6 +145,7 @@ class Maquina{
     }
 }
 
+// Función para agregar máquinas
 function agregarMaquina(arr, filtro){
     const misMaquinas = arr.find((el)=>{
         return el.id == filtro;
@@ -143,14 +154,14 @@ function agregarMaquina(arr, filtro){
     return misMaquinas
 }
 
-
-
+// Función para crear una máquina en la lista de máquinas del usuario
 function crearMiMaquina(misMaquinas) {
     const { id, img, nombre, descripcion, zona } = misMaquinas;
     const maquinaMisMaquinas = new Maquina(id, img, nombre, descripcion, zona);
     guardarMaquinaLS(usActual,maquinaMisMaquinas);
 }
 
+// Función para guardar la máquina en el almacenamiento local del usuario
 function guardarMaquinaLS(nomUsuario, maquina){
     let us = JSON.parse(localStorage.getItem('usuarios'));
     const usuarioEncontrado = us.find((usuario) => usuario.usuario === nomUsuario)
