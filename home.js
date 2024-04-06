@@ -16,6 +16,8 @@ logo.addEventListener("click", ()=>{
     window.location.href = "./home.html"; // Redirigir al usuario a la página de inicio
 });
 
+
+
 // Función para mostrar notificaciones
 function toastify(texto, dir) {
     Toastify({
@@ -64,7 +66,6 @@ function getMaquinas(maquinasDB){
                                                 <div class="cardContent">
                                                     <img src="${img}" alt="">
                                                     <h3>${nombre}</h3>
-                                                    <h5>${zona}</h5>
                                                     <p>${descripcion}</p>
                                                 </div>
                                                 <div class="divBoton">
@@ -168,3 +169,4 @@ function guardarMaquinaLS(nomUsuario, maquina){
     usuarioEncontrado.maquinas.push(maquina);
     localStorage.setItem('usuarios',JSON.stringify(us))
 }
+

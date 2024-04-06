@@ -22,73 +22,86 @@ function aggMaquina(nomUsuario){
 
     // Obtener las máquinas del usuario
     const usMaquina = us.maquinas;
+    if (usMaquina.length === 0) {
+            // Si el usuario no tiene máquinas, mostrar un mensaje
+            crearTextoP();
+    } else {
+            // Si el usuario tiene máquinas, iterar sobre ellas y agregarlas al DOM
+            for (const maquina of usMaquina) {
 
-    // Iterar sobre las máquinas del usuario
-    for (const maquina of usMaquina) {
+                // Crear un nuevo elemento div para cada máquina
+                const nuevaMaquina = document.createElement('div');
+                nuevaMaquina.id = maquina.id; // Asignar el ID de la máquina
+                nuevaMaquina.classList.add('card'); // Agregar la clase 'card'
+                nuevaMaquina.classList.add('cardMisMaquinas');
+                
+                // Insertar el contenido HTML de la máquina con sus detalles
+                nuevaMaquina.innerHTML = `
+                    <img src="${maquina.imagen}" alt="">
+                    <h3>${maquina.nombre}</h3>
+                    <p>${maquina.descripcion}</p>
+                    <h4> Agregue los kilos correspondientes </h4>
+                    <div class="control">
+                        <button class="kg menos">-</button>
+                        <p class="contador">0</p>
+                        <button class="kg mas">+</button>
+                    </div>
+                    <button class="eliminar">Eliminar</button>`;
 
-        // Crear un nuevo elemento div para cada máquina
-        const nuevaMaquina = document.createElement('div');
-        nuevaMaquina.id = maquina.id; // Asignar el ID de la máquina
-        nuevaMaquina.classList.add('card'); // Agregar la clase 'card'
+                // Agregar la nueva máquina al contenedor de máquinas del usuario
+                misMaquinas.appendChild(nuevaMaquina);
 
-        // Insertar el contenido HTML de la máquina con sus detalles
-        nuevaMaquina.innerHTML = `
-            <img src="${maquina.imagen}" alt="">
-            <h3>${maquina.nombre}</h3>
-            <h5>${maquina.zona}</h5>
-            <p>${maquina.descripcion}</p>
-            <h4> Agregue los kilos correspondientes </h4>
-            <div class="control">
-                <button class="kg menos">-</button>
-                <p class="contador">0</p>
-                <button class="kg mas">+</button>
-            </div>
-            <button class="eliminar">Eliminar</button>`;
-        
-        // Agregar la nueva máquina al contenedor de máquinas del usuario
-        misMaquinas.appendChild(nuevaMaquina);
-        
-        // Obtener los elementos relacionados con la cantidad de kilos
-        const btnMenos = nuevaMaquina.querySelector('.menos');
-        const btnMas = nuevaMaquina.querySelector('.mas');
-        const contador = nuevaMaquina.querySelector('.contador');
-    
-        let cantidad = 0; // Inicializar la cantidad de kilos
-        
-        // Evento click para disminuir la cantidad de kilos
-        btnMenos.addEventListener('click', () => {
-            if (cantidad > 0) {
-                cantidad--;
-                contador.innerHTML = cantidad; // Actualizar la cantidad mostrada
+                // Obtener los elementos relacionados con la cantidad de kilos
+                const btnMenos = nuevaMaquina.querySelector('.menos');
+                const btnMas = nuevaMaquina.querySelector('.mas');
+                const contador = nuevaMaquina.querySelector('.contador');
+
+                let cantidad = 0; // Inicializar la cantidad de kilos
+
+                // Evento click para disminuir la cantidad de kilos
+                btnMenos.addEventListener('click', () => {
+                    if (cantidad > 0) {
+                        cantidad--;
+                        contador.innerHTML = cantidad; // Actualizar la cantidad mostrada
+                    }
+                });
+
+                // Evento click para aumentar la cantidad de kilos
+                btnMas.addEventListener('click', () => {
+                    cantidad++;
+                    contador.innerHTML = cantidad;
+                });
+
+                // Evento click para eliminar la máquina
+                const btnEliminar = nuevaMaquina.querySelector('.eliminar');
+                btnEliminar.addEventListener('click', () => {
+                    nuevaMaquina.remove(); // Eliminar la máquina del DOM
+
+                    // Encontrar el índice de la máquina en la lista de máquinas del usuario
+                    const indice = usMaquina.findIndex((el) => el.id === maquina.id);
+
+                    // Eliminar la máquina de la lista de máquinas del usuario
+                    usMaquina.splice(indice, 1);
+
+                    // Actualizar la lista de usuarios en el localStorage
+                    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+                    if(usMaquina.length == 0){
+                        crearTextoP()
+                    }
+
+
+                });
             }
-        });
-        
-        // Evento click para eliminar la máquina
-        btnMas.addEventListener('click', () => {
-            cantidad++;
-            contador.innerHTML = cantidad;
-        });
-
-        const btnEliminar = nuevaMaquina.querySelector('.eliminar');
-        btnEliminar.addEventListener('click', () => {
-            
-            nuevaMaquina.remove(); // Eliminar la máquina del DOM
-
-            // Encontrar el índice de la máquina en la lista de máquinas del usuario
-            const indice = usMaquina.findIndex((el)=>{
-                return el.id === maquina.id;
-            })
-
-            // Eliminar la máquina de la lista de máquinas del usuario
-            usMaquina.splice(indice,1);
-
-            // Actualizar la lista de usuarios en el localStorage
-            localStorage.setItem('usuarios',JSON.stringify(usuarios));
-        });
-    }
+        }
 }
 
 // Llamar a la función para agregar máquinas del usuario actual
-aggMaquina(usActual)
+aggMaquina(usActual);
 
+function crearTextoP(){
+    const mensaje = document.createElement('p');
+    mensaje.classList.add("maquinas-p");
+    mensaje.textContent = 'No se ha agregado ninguna máquina';
+    misMaquinas.appendChild(mensaje);
+}
 

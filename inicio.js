@@ -73,6 +73,8 @@ iniciar.addEventListener('click',(e)=>{
 
 // Evento click del botón de registro
 registrar.addEventListener("click", ()=>{
+    usuario.value = "";
+    contraseña.value= "";
     window.location.href = "./registro.html";
 });
 
