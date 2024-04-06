@@ -28,7 +28,7 @@
         nombre: 'Whey ptrotein',
         precio: '23000',
         descripcion: 'Proteína en polvo sabor frutilla Este suplemento contiene 453 gramos de proteína por porción, ideal para aquellos que buscan una fuente rápida de proteína de alta calidad después del entrenamiento.',
-        srcImg: './statics/suplementos11.PNG'
+        srcImg: './statics/suplementos12.PNG'
         }
     }
     

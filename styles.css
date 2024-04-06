@@ -392,7 +392,7 @@ td {
 
 /* Inicio estilos para seccion productos */
 .cartola {
-    height: 525px;
+    height: 575px;
     width: 230px;
     border-radius: 0.35rem;
     background: #f4f4f4;
@@ -403,6 +403,7 @@ td {
     transition: transform 0.1s;
     overflow: hidden;
     margin: 1rem;
+    margin-top: 80px;
 }
 
 .cartola:hover {
@@ -444,7 +445,7 @@ img {
 
 .descripcion-prod {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 16.5px;
     padding: 0.2rem 1rem;
     overflow: hidden;
     opacity: .7;
@@ -521,8 +522,11 @@ img {
     display: flex;
     justify-content: right;
     margin-right: 400px;
-    margin-top: 100px;
+    margin-top: 250px;
+    color: white;
 }
+
+
 
 .main-contac .contenedor {
     display: flex;
@@ -674,7 +678,52 @@ h1 {
         font-size: 40px;
     }
 
-    nav {
-        display: none;
+    h4 {
+        font-size: 15px;
     }
+
+    
+}
+
+/*Media query para menu hamburguesa */
+@media screen and (max-width: 768px) {
+    .menu ul {
+        display: none; /* Inicialmente oculto */
+        position: absolute;
+        top: 120px;
+        left: 90px;
+        width: 80%;
+        background-color: #131313;
+        text-align: center;
+        box-shadow: 5px 5px 5px #c00202;
+    }
+
+    .menu ul.show {
+      display: block; /* Mostrar cuando la clase 'show' está presente */
+    }
+
+    .menu li {
+        margin: 10px 0;
+        border-bottom: 1px solid white;
+    }
+
+    .menu li a{
+        color: white;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .menu-btn .btn-line {
+        width: 25px;
+        height: 3px;
+        background-color: #c00202;
+        margin: 5px;
+    }
+
+    .menu ul li:hover{
+        background-color: #c00202;
+    }
+    
 }
