@@ -85,11 +85,7 @@ form{
     transition: all 500ms;
 }
 
-.body_registro {
-    background-image: url(./statics/gym3.png);
-    background-size: cover ;
-    background-position: center;
-}
+
 
 #iniciar:hover {
     background-color: rgb(192, 2, 2);
@@ -192,6 +188,12 @@ button{
 }
 /* Fin estilos Header */
 
+.body_registro {
+    background-image: url(./statics/gym3.png);
+    background-size: cover ;
+    background-position: center;
+    
+}
 
 /* Inicio estilos seccion mis maquinas*/
 .contenedor-busqueda {
@@ -624,6 +626,10 @@ h1 {
 }
 
 @media only screen and (max-width: 600px) {
+    .body_registro {
+        
+    }
+
     .contenedor-busqueda {
         display: flex;
         justify-content: center;
@@ -682,7 +688,9 @@ h1 {
         font-size: 15px;
     }
 
-    
+    .maquinas-p {
+        font-size: 20px;
+    }
 }
 
 /*Media query para menu hamburguesa */
@@ -690,7 +698,7 @@ h1 {
     .menu ul {
         display: none; /* Inicialmente oculto */
         position: absolute;
-        top: 120px;
+        top: 100.5px;
         left: 90px;
         width: 80%;
         background-color: #131313;

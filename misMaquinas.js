@@ -11,6 +11,16 @@ logo.addEventListener("click", () => {
     window.location.href = "./home.html"; // Redirigir al usuario a la página de inicio
 });
 
+// Función para buscar máquinas
+function buscarMaquina(arr, filtro){
+    const filtroLowerCase = filtro.toLowerCase();
+    const encontrados = arr.filter((e)=>{
+        return e.nombre.toLowerCase().startsWith(filtroLowerCase);
+    });
+    return encontrados;
+}
+
+
 // Función para agregar máquinas al DOM del usuario actual
 function aggMaquina(nomUsuario){
     
@@ -105,3 +115,10 @@ function crearTextoP(){
     misMaquinas.appendChild(mensaje);
 }
 
+const menuBtn = document.querySelector('.menu-btn');
+const menu = document.querySelector('.menu ul');
+
+// Agregar evento clic al botón del menú hamburguesa
+menuBtn.addEventListener('click', () => {
+    menu.classList.toggle('show');
+});
