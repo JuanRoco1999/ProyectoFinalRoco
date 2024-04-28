@@ -115,6 +115,11 @@ form{
     text-decoration: none;
 }
 
+.vinculo2:hover{
+    transform: scale(1.05);
+    transition: all 300ms;
+}
+
 .vinculo:hover{
     transform: scale(1.05);
     transition: all 300ms;
@@ -531,8 +536,6 @@ img {
     color: white;
 }
 
-
-
 .main-contac .contenedor {
     display: flex;
 }
@@ -699,6 +702,10 @@ h1 {
     .maquinas-p {
         font-size: 20px; 
     }
+
+    .footer-text p {
+        font-size: 1.1rem !important;
+    }
 }
 
 /*Media query para menu hamburguesa */
@@ -760,5 +767,61 @@ h1 {
         background-size: cover; /* Ajusta la imagen para cubrir todo el div */
         background-repeat: no-repeat; 
     }
+
     
 }
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    color: white;
+    border-top: 2px solid red;
+    background: black;
+}
+
+.footer-text p {
+    font-size: 1.2rem;
+}
+
+.footer-iconTop a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--main-color);
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.footer-iconTop a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--second-bg-color);
+    z-index: -1;
+    transition: .5s;
+}
+
+.footer-iconTop a:hover::before {
+    width: 100%;
+
+}
+
+.footer-iconTop a i {
+    font: 2.4rem;
+    color: var(--bg-color);
+}
+
+.footer-iconTop a:hover i {
+    color: var(--main-color);
+}
+
